@@ -1,6 +1,6 @@
 //const apiUrl = 'http://localhost:3000/api/items'; // URL de la API para los items
 
-const apiUrl= 'https://crud-node-virid.vercel.app/api/items'
+const apiUrl= 'https://crud-nodejs-nine.vercel.app//api/items'
 
 //const apiUrl = window.location.hostname === "localhost"
 
