@@ -19,8 +19,8 @@ const app = express();
 
 // NUEVA PARTE
 app.use(cors({
-  origin: "*", // Permitir todos los orígenes. Cambia "*" por tu dominio en producción.
-  methods: ["GET", "POST", "PUT", "DELETE"]
+  origin: 'https://crud-nodejs-eta.vercel.app', // Permitir todos los orígenes. Cambia "*" por tu dominio en producción.
+  //methods: ["GET", "POST", "PUT", "DELETE"]
 }));
 app.use(express.json()); // Parsear JSON en las solicitudes entrantes
 
