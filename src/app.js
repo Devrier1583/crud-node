@@ -18,10 +18,26 @@ const app = express();
 //app.use(cors()); // Habilitar CORS para permitir peticiones de otros orígenes
 
 // NUEVA PARTE
-app.use(cors({
-  origin: 'https://crud-nodejs-eta.vercel.app', // Permitir todos los orígenes. Cambia "*" por tu dominio en producción.
-  //methods: ["GET", "POST", "PUT", "DELETE"]
-}));
+// Middleware para configurar CORS manualmente
+app.use((req, res, next) => {
+  // Permite solicitudes de todos los orígenes
+  res.header('Access-Control-Allow-Origin', '');  // Puedes poner el dominio específico en lugar de ''
+
+  // Define los métodos HTTP permitidos
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
+  // Especifica las cabeceras que pueden ser enviadas con la solicitud
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+
+  // Si la solicitud es de tipo OPTIONS, respondemos con un código 200 (éxito) para que el navegador pueda proceder
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  // Si no es una solicitud OPTIONS, continúa con la siguiente capa de middleware o ruta
+  next();
+});
+
 app.use(express.json()); // Parsear JSON en las solicitudes entrantes
 
 // const DB_URL= env.get('DB_URL').required().asString();
@@ -59,3 +75,4 @@ app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
   
 });
+
