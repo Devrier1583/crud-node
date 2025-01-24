@@ -19,7 +19,7 @@ const app = express();
 
 // NUEVA PARTE
 app.use(cors({
-  origin: "https://crud-node-virid.vercel.app/", // Permitir todos los orígenes. Cambia "*" por tu dominio en producción.
+  origin: "https://crud-node-virid.vercel.app/api/items", // Permitir todos los orígenes. Cambia "*" por tu dominio en producción.
   methods: ["GET", "POST", "PUT", "DELETE"]
 }));
 app.use(express.json()); // Parsear JSON en las solicitudes entrantes
