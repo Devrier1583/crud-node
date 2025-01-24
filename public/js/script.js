@@ -1,6 +1,6 @@
 //const apiUrl = 'http://localhost:3000/api/items'; // URL de la API para los items
 
-const apiUrl= 'https://crud-nodejs-nine.vercel.app/api/items'
+const apiUrl= 'https://crud-nodejs-nine.vercel.app/api/'
 
 //const apiUrl = window.location.hostname === "localhost"
 
@@ -8,7 +8,7 @@ const apiUrl= 'https://crud-nodejs-nine.vercel.app/api/items'
 
 // Función para obtener todos los items desde el backend
 function getItems() {
-  fetch(apiUrl)
+  fetch(apiUrl + 'items')
     .then(response => response.json())
     .then(items => {
       const itemsList = document.getElementById('items-list');
