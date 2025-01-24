@@ -5,7 +5,7 @@
 const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3000/api/items";
 
 // Función para obtener todos los items desde el backend
-function getItems() {
+/*function getItems() {
   fetch(apiUrl)
     .then(response => response.json())
     .then(items => {
@@ -30,9 +30,48 @@ function getItems() {
         li.appendChild(deleteButton);
 
         itemsList.appendChild(li);
-      });
+      })
+    })
+}*/
+
+async function getItems() {
+  try {
+    const response = await fetch(apiUrl);
+
+    if (!response.ok) {
+      throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
+    }
+
+    const items = await response.json();
+
+    const itemsList = document.getElementById('items-list');
+    itemsList.innerHTML = '';
+
+    items.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.name} - ${item.description}`;
+
+      const editarBoton = document.createElement('button');
+      editarBoton.textContent = 'Editar';
+      editarBoton.style.backgroundColor = '#6db9b8';
+      editarBoton.addEventListener('click', () => editaritem(item));
+
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Eliminar';
+      deleteButton.style.backgroundColor = '#f76c6c';
+      deleteButton.addEventListener('click', () => deleteItem(item._id));
+
+      li.appendChild(editarBoton);
+      li.appendChild(deleteButton);
+
+      itemsList.appendChild(li);
     });
+  } catch (error) {
+    console.error('Error al obtener los items:', error);
+    alert('No se pudo conectar con la API. Por favor, inténtalo más tarde.');
+  }
 }
+
 
 // Modificamos el event listener del formulario para manejar tanto POST como PUT
 document.getElementById('item-form').addEventListener('submit', (e) => {
