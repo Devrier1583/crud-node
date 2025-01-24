@@ -1,11 +1,13 @@
 //const apiUrl = 'http://localhost:3000/api/items'; // URL de la API para los items
 
+const apiUrl= 'https://crud-node-virid.vercel.app/api/items'
+
 //const apiUrl = window.location.hostname === "localhost"
 
-const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3000/api/items";
+//const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3000/api/items";
 
 // Función para obtener todos los items desde el backend
-/*function getItems() {
+function getItems() {
   fetch(apiUrl)
     .then(response => response.json())
     .then(items => {
@@ -32,9 +34,9 @@ const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3000/api/items
         itemsList.appendChild(li);
       })
     })
-}*/
+}
 
-async function getItems() {
+/*async function getItems() {
   try {
     const response = await fetch(apiUrl);
 
@@ -70,8 +72,7 @@ async function getItems() {
     console.error('Error al obtener los items:', error);
     alert('No se pudo conectar con la API. Por favor, inténtalo más tarde.');
   }
-}
-
+}*/
 
 // Modificamos el event listener del formulario para manejar tanto POST como PUT
 document.getElementById('item-form').addEventListener('submit', (e) => {
