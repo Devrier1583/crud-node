@@ -48,6 +48,8 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+
+
 // Ruta para eliminar un item específico (DELETE)
 router.delete('/:id', async (req, res) => {
   try {

@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/app.js"
   },
-  "author": "Jhonathan Giraldo",
+  "author": "Devrier P",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

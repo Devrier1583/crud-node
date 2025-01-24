@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:5000/api/items'; // URL de la API para los items
+const apiUrl = 'http://localhost:3000/api/items'; // URL de la API para los items
 
 // Función para obtener todos los items desde el backend
 function getItems() {
