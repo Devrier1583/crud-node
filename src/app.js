@@ -23,7 +23,7 @@ app.use(cors())
 
 /*app.use((req, res, next) => {
   // Permite solicitudes de todos los orígenes
-  res.header('Access-Control-Allow-Origin', '');  
+  res.header('Access-Control-Allow-Origin', '*');  
 
   // Define los métodos HTTP permitidos
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');

@@ -10,6 +10,7 @@ const router = express.Router();
 // Ruta para crear un nuevo item (POST)
 router.post('/', async (req, res) => {
   try {
+    res.header('Access-Control-Allow-Origin', '*'); 
     // Creamos una nueva instancia del modelo Item con los datos recibidos en el cuerpo de la solicitud
     const newItem = new Item(req.body);
     // Guardamos el nuevo item en la base de datos
