@@ -8,7 +8,8 @@ const apiUrl= 'https://crud-nodejs-nine.vercel.app/api/'
 
 // Función para obtener todos los items desde el backend
 function getItems() {
-  fetch(apiUrl + 'items')
+  //fetch(apiUrl + 'items')
+  fetch(apiUrl)
     .then(response => response.json())
     .then(items => {
       const itemsList = document.getElementById('items-list');
