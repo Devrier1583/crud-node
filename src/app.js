@@ -19,9 +19,11 @@ const app = express();
 
 // NUEVA PARTE
 // Middleware para configurar CORS manualmente
-app.use((req, res, next) => {
+app.use(cors())
+
+/*app.use((req, res, next) => {
   // Permite solicitudes de todos los orígenes
-  res.header('Access-Control-Allow-Origin', '');  // Puedes poner el dominio específico en lugar de ''
+  res.header('Access-Control-Allow-Origin', '');  
 
   // Define los métodos HTTP permitidos
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -36,7 +38,7 @@ app.use((req, res, next) => {
 
   // Si no es una solicitud OPTIONS, continúa con la siguiente capa de middleware o ruta
   next();
-});
+});*/
 
 app.use(express.json()); // Parsear JSON en las solicitudes entrantes
 
