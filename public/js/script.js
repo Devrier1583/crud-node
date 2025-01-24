@@ -1,6 +1,8 @@
 //const apiUrl = 'http://localhost:3000/api/items'; // URL de la API para los items
 
-const apiUrl = window.location.hostname === "localhost"
+//const apiUrl = window.location.hostname === "localhost"
+
+const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3000/api/items";
 
 // Función para obtener todos los items desde el backend
 function getItems() {
