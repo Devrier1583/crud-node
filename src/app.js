@@ -18,7 +18,10 @@ const app = express();
 //app.use(cors()); // Habilitar CORS para permitir peticiones de otros orígenes
 
 // NUEVA PARTE
-app.use(cors());
+app.use(cors({
+  origin: "*", // Permitir todos los orígenes. Cambia "*" por tu dominio en producción.
+  methods: ["GET", "POST", "PUT", "DELETE"]
+}));
 app.use(express.json()); // Parsear JSON en las solicitudes entrantes
 
 // const DB_URL= env.get('DB_URL').required().asString();
