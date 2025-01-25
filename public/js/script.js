@@ -24,8 +24,8 @@ function getItems() {
         editarBoton.style.backgroundColor = '#6db9b8';
         editarBoton.addEventListener('click', () => {
           editaritem(item)
-          // window.location.replace('/#item-form')//nuevo 
-          window.scroll(0,0)
+          window.location.replace('/#item-form')//nuevo 
+          //window.scroll(0,0)
         });
 
         const deleteButton = document.createElement('button');
