@@ -22,7 +22,11 @@ function getItems() {
         const editarBoton = document.createElement('button');
         editarBoton.textContent = 'Editar';
         editarBoton.style.backgroundColor = '#6db9b8';
-        editarBoton.addEventListener('click', () => editaritem(item));
+        editarBoton.addEventListener('click', () => {
+          editaritem(item)
+          // window.location.replace('/#item-form')//nuevo 
+          window.scroll(0,0)
+        });
 
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Eliminar';

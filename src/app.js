@@ -17,28 +17,8 @@ dotenv.config(); // Cargar las variables de entorno desde el archivo .env
 const app = express();
 //app.use(cors()); // Habilitar CORS para permitir peticiones de otros orígenes
 
-// NUEVA PARTE
 // Middleware para configurar CORS manualmente
 app.use(cors())
-
-/*app.use((req, res, next) => {
-  // Permite solicitudes de todos los orígenes
-  res.header('Access-Control-Allow-Origin', '*');  
-
-  // Define los métodos HTTP permitidos
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-
-  // Especifica las cabeceras que pueden ser enviadas con la solicitud
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
-
-  // Si la solicitud es de tipo OPTIONS, respondemos con un código 200 (éxito) para que el navegador pueda proceder
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
-
-  // Si no es una solicitud OPTIONS, continúa con la siguiente capa de middleware o ruta
-  next();
-});*/
 
 app.use(express.json()); // Parsear JSON en las solicitudes entrantes
 
